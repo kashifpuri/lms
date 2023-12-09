@@ -1,0 +1,242 @@
+openapi: "3.0.1"
+info:
+  version: v1
+  title: LMS-PATRON API
+  description: This is an open API specification document for Library Management System.
+  contact:
+    name: KJP
+    email: 
+  license:
+    name: 
+    url: 
+servers:
+  - url: /lms/api
+paths:
+  '/v1/patrons':
+    get:
+      summary: Get Patrons List
+      operationId: getPatronsList
+      description: >
+        Get the complete list of available patrons.
+      tags:
+        - patrons
+      security:
+        - OAuth2:
+            - '#PatronsView'
+      parameters:
+        - name: name
+          in: query
+          description: Name of Patron
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Patrons list returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatronsListResponse'
+        '400':
+          description: Bad Request
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  '/v1/patron':
+    post:
+      summary: Add a patron
+      operationId: addPatron
+      security:
+        - OAuth2:
+            - '#AddPatron'
+      description: Add a patron via this api
+      tags:
+        - patrons
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Patron'
+              required: true
+      responses:
+        '200':
+          description: Patron added successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddPatronResponse'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+                 
+  '/v1/patron/{patronid}':              
+    put:
+      summary: Update patron detail
+      operationId: updatePatronDetail
+      security:
+        - OAuth2:
+            - '#AddPatron'
+      description: Update patron details via this api
+      tags:
+        - patrons
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Patron'
+              required: true
+      responses:
+        '200':
+          description: Patron updated successfully
+        '400':
+          description: Bad Request
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      summary: Delete a patron
+      operationId: deletePatron
+      security:
+        - OAuth2:
+            - '#DeletePatron'
+      description: Delete a patron via this api
+      tags:
+        - patrons
+      parameters:
+        - name: patronId
+          schema:
+            type: integer
+          required: true
+          in: path
+      responses:
+        '200':
+          description: Patron deleted successfully
+        '400':
+          description: Bad Request
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    get:
+      summary: Get patron detail
+      operationId: getPatronDetail
+      security:
+        - OAuth2:
+            - '#ViewPatron'
+      description: Retrieve patron details via this api
+      tags:
+        - patrons
+      parameters:
+        - name: patronId
+          schema:
+            type: integer
+          required: true
+          in: path
+      responses:
+        '200':
+          description: Patron details fetched successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Patron'
+        '400':
+          description: Bad Request
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+                                
+components:
+  schemas:
+    Error:
+      type: object
+      required: [code, message]
+      properties:
+      code:
+        type: integer
+      message:
+        type: string
+
+    PatronsListResponse:
+      type: object
+      properties:
+        patrons:
+          type: array
+          items:
+            $ref: '#/components/schemas/Patron'
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+          
+    AddPatronResponse:
+      type: object
+      properties:
+        patron:
+          $ref: '#/components/schemas/Patron'
+    
+    Patron:
+      type: object
+      required: [name, cellNumber, addressLine1, city, country]
+      properties:
+        patronId:
+          type: integer
+        name:
+          type: string
+          example: Abcdef
+          minLength: 1
+          maxLength: 250
+        cellNumber:
+          type: string
+          example: 123456
+          minLength: 1
+          maxLength: 50
+        addressLine1:
+          type: string
+          example: Abcdef
+          minLength: 1
+          maxLength: 250
+        city:
+          type: string
+          example: Abcdef
+          minLength: 1
+          maxLength: 250
+        country:
+          type: string
+          example: Abcdef
+          minLength: 1
+          maxLength: 250
+    Pagination:
+      type: object
+      required:
+        - totalItems
+      properties:
+        totalItems:
+          type: integer
+    Page:
+      type: object
+      properties:
+        pageNumber:
+          description: Page number starting with zero
+          type: integer
+          format: int32
+          default: 0
+          minimum: 0
+        size:
+          description: Page size to fetch the no of records. Max supported max page size to 1000. Client will call multiple times if records are more then 1000.
+          type: integer
+          format: int32
+          default: 1000
+          minimum: 1
+          maximum: 1000
+          example: 1000

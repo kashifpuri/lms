@@ -1,0 +1,257 @@
+openapi: "3.0.1"
+info:
+  version: v1
+  title: LMS-BOOK API
+  description: This is an open API specification document for Library Management System.
+  contact:
+    name: KJP
+    email: 
+  license:
+    name: 
+    url: 
+servers:
+  - url: /lms/api
+paths:
+  '/v1/books':
+    get:
+      summary: Get Books List
+      operationId: getBooksList
+      description: >
+        Get the complete list of available books.
+      tags:
+        - books
+      security:
+        - OAuth2:
+            - '#BooksView'
+      parameters:
+        - name: title
+          in: query
+          description: Title of Book
+          schema:
+            type: string
+        - name: author
+          in: query
+          description: Author of Book
+          schema:
+            type: string
+            maxLength: 50
+        - name: genre
+          in: query
+          description: Book genre
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Books list returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BooksListResponse'
+        '400':
+          description: Bad Request
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  '/v1/book':
+    post:
+      summary: Add a book
+      operationId: addBook
+      security:
+        - OAuth2:
+            - '#AddBook'
+      description: Add a book via this api
+      tags:
+        - books
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Book'
+              required: true
+      responses:
+        '200':
+          description: Book added successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddBookResponse'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+                 
+  '/v1/book/{bookId}': 
+    put:
+      summary: Update book detail
+      operationId: updateBookDetail
+      security:
+        - OAuth2:
+            - '#AddBook'
+      description: Update book details via this api
+      tags:
+        - books
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Book'
+              required: true
+      responses:
+        '200':
+          description: Book updated successfully
+        '400':
+          description: Bad Request
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'             
+    delete:
+      summary: Delete a book
+      operationId: deleteBook
+      security:
+        - OAuth2:
+            - '#DeleteBook'
+      description: Delete a book via this api
+      tags:
+        - books
+      parameters:
+        - name: bookId
+          schema:
+            type: integer
+          required: true
+          in: path
+      responses:
+        '200':
+          description: Book deleted successfully
+        '400':
+          description: Bad Request
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    get:
+      summary: Get book detail
+      operationId: getBookDetail
+      security:
+        - OAuth2:
+            - '#ViewBook'
+      description: Retrieve book details via this api
+      tags:
+        - books
+      parameters:
+        - name: bookId
+          schema:
+            type: integer
+          required: true
+          in: path
+      responses:
+        '200':
+          description: Book details fetched successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
+        '400':
+          description: Bad Request
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+                                
+components:
+  schemas:
+    Error:
+      type: object
+      required: [code, message]
+      properties:
+      code:
+        type: integer
+      message:
+        type: string
+
+    BooksListResponse:
+      type: object
+      properties:
+        books:
+          type: array
+          items:
+            $ref: '#/components/schemas/Book'
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+          
+    AddBookResponse:
+      type: object
+      properties:
+        book:
+          $ref: '#/components/schemas/Book'
+    
+    Book:
+      type: object
+      required: [title, genre, author, ISBN, totalQuantity, availableQuantity]
+      properties:
+        bookId:
+          type: integer
+        title:
+          description: Book Title
+          type: string
+          example: Abcdef
+          minLength: 1
+          maxLength: 250
+        genre:
+          type: string
+        rating:
+          type: string
+        author:
+          description: Author name
+          type: string
+          example: Abcdef
+          minLength: 1
+          maxLength: 250
+        isbn:
+          description: Book ISBN 
+          type: string
+          pattern: ^(?:ISBN(?:-10)?:? )?(?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$)[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]$
+          example: ISBN-10 0-596-52068-9
+          minLength: 1
+          maxLength: 250
+        totalQuantity:
+          type: integer
+          example: 123
+        availableQuantity:
+          type: integer
+          example: 123  
+    Pagination:
+      type: object
+      required:
+        - totalItems
+      properties:
+        totalItems:
+          type: integer
+    Page:
+      type: object
+      properties:
+        pageNumber:
+          description: Page number starting with zero
+          type: integer
+          format: int32
+          default: 0
+          minimum: 0
+        size:
+          description: Page size to fetch the no of records. Max supported max page size to 1000. Client will call multiple times if records are more then 1000.
+          type: integer
+          format: int32
+          default: 1000
+          minimum: 1
+          maximum: 1000
+          example: 1000

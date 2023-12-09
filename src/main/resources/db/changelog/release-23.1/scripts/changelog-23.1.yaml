@@ -1,0 +1,22 @@
+databaseChangeLog:
+- include:
+    file: schema-book-23.1.yaml
+    relativeToChangelogFile: true
+- include:
+      file: data-book-23.1.yaml
+      relativeToChangelogFile: true
+- include:
+    file: schema-patron-23.1.yaml
+    relativeToChangelogFile: true
+- include:
+      file: data-patron-23.1.yaml
+      relativeToChangelogFile: true 
+- include:
+    file: schema-transaction-23.1.yaml
+    relativeToChangelogFile: true           
+- changeSet:
+    id: 23.1-scripts
+    author: kjp
+    changes:
+    - tagDatabase:
+        tag: 23.1-scripts

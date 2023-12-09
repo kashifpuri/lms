@@ -1,0 +1,77 @@
+databaseChangeLog:
+- changeSet:
+    id: data-23.1-data
+    author: kjp
+    changes:
+    - insert:
+        tableName: Book
+        columns:
+        - column:
+            name: Title
+            value: Sapiens - A Brief History of Humankind
+        - column:
+            name: Author
+            value: Yuval Noah Harari
+        - column:
+            name: Genre
+            value: Non-Fiction   
+        - column:
+            name: Rating
+            value: 4   
+        - column:
+            name: Isbn
+            value: ISBN-10 0-596-52068-9   
+        - column:
+            name: total_quantity
+            value: 100   
+        - column:
+            name: available_quantity
+            value: 100    
+    - insert:
+        tableName: Book
+        columns:
+        - column:
+            name: Title
+            value: How the World Really Works
+        - column:
+            name: Author
+            value: Vaclav Smil
+        - column:
+            name: Genre
+            value: Non-Fiction   
+        - column:
+            name: Rating
+            value: 4   
+        - column:
+            name: Isbn
+            value: 0-596-52068-9   
+        - column:
+            name: total_quantity
+            value: 10   
+        - column:
+            name: available_quantity
+            value: 10
+    - insert:
+        tableName: Book
+        columns:
+        - column:
+            name: Title
+            value: Surrender
+        - column:
+            name: Author
+            value: Bono
+        - column:
+            name: Genre
+            value: Non-Fiction   
+        - column:
+            name: Rating
+            value: 4   
+        - column:
+            name: Isbn
+            value: 0-586-52068-9   
+        - column:
+            name: total_quantity
+            value: 10   
+        - column:
+            name: available_quantity
+            value: 10             

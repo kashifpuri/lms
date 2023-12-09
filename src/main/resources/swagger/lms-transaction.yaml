@@ -1,0 +1,256 @@
+openapi: "3.0.1"
+info:
+  version: v1
+  title: LMS-TRANSACTION API
+  description: This is an open API specification document for Library Management System.
+  contact:
+    name: KJP
+    email: 
+  license:
+    name: 
+    url: 
+servers:
+  - url: /lms/api
+paths:
+  '/v1/transactions':
+    get:
+      summary: Get Transactions List
+      operationId: getTransactionsList
+      description: >
+        Get the complete list of available transactions.
+      tags:
+        - transactions
+      security:
+        - OAuth2:
+            - '#TransactionsView'
+      parameters:
+        - name: bookId
+          in: query
+          description: Id of book
+          schema:
+            type: string
+        - name: patronId
+          in: query
+          description: Id of Patron
+          schema:
+            type: string
+            maxLength: 50
+      responses:
+        '200':
+          description: Transactions list returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransactionsListResponse'
+        '400':
+          description: Bad Request
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  '/v1/transaction':
+    post:
+      summary: Add a transaction
+      operationId: addTransaction
+      security:
+        - OAuth2:
+            - '#AddTransaction'
+      description: Add a transaction via this api
+      tags:
+        - transactions
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Transaction'
+              required: true
+      responses:
+        '200':
+          description: Transaction added successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddTransactionResponse'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+                 
+  '/v1/transaction/{transactionid}':
+    put:
+      summary: Update transaction detail
+      operationId: updateTransactionDetail
+      security:
+        - OAuth2:
+            - '#AddTransaction'
+      description: Update transaction details via this api
+      tags:
+        - transactions
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Transaction'
+              required: true
+      responses:
+        '200':
+          description: Transaction updated successfully
+        '400':
+          description: Bad Request
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'              
+    delete:
+      summary: Delete a transaction
+      operationId: deleteTransaction
+      security:
+        - OAuth2:
+            - '#DeleteTransaction'
+      description: Delete a transaction via this api
+      tags:
+        - transactions
+      parameters:
+        - name: transactionId
+          schema:
+            type: integer
+          required: true
+          in: path
+      responses:
+        '200':
+          description: Transaction deleted successfully
+        '400':
+          description: Bad Request
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    get:
+      summary: Get transaction detail
+      operationId: getTransactionDetail
+      security:
+        - OAuth2:
+            - '#ViewTransaction'
+      description: Retrieve transaction details via this api
+      tags:
+        - transactions
+      parameters:
+        - name: transactionId
+          schema:
+            type: integer
+          required: true
+          in: path
+      responses:
+        '200':
+          description: Transaction details fetched successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Transaction'
+        '400':
+          description: Bad Request
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+                                
+components:
+  schemas:
+    Error:
+      type: object
+      required: [code, message]
+      properties:
+      code:
+        type: integer
+      message:
+        type: string
+
+    TransactionsListResponse:
+      type: object
+      properties:
+        transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Transaction'
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+          
+    AddTransactionResponse:
+      type: object
+      properties:
+        transaction:
+          $ref: '#/components/schemas/Transaction'
+    
+    Transaction:
+      type: object
+      required: [bookId, patronId, status]
+      properties:
+        transactionId:
+          type: integer
+        bookId:
+          type: string
+          example: 12345
+          minLength: 1
+          maxLength: 250
+        patronId:
+          type: string
+          example: 12345
+          minLength: 1
+          maxLength: 50
+        dueDate:
+          type: string
+          format: date
+        status:
+          type: string
+          enum:
+            - 'Borrowed'
+            - 'Returned'
+        comments:
+          type: string
+        actionDate:
+          type: string
+          format: date
+        issueDate:
+          type: string
+          format: date
+        returnDate:
+          type: string
+          format: date
+        fineAmount:
+          type: string
+          minLength: 1
+          maxLength: 10
+    Pagination:
+      type: object
+      required:
+        - totalItems
+      properties:
+        totalItems:
+          type: integer
+    Page:
+      type: object
+      properties:
+        pageNumber:
+          description: Page number starting with zero
+          type: integer
+          format: int32
+          default: 0
+          minimum: 0
+        size:
+          description: Page size to fetch the no of records. Max supported max page size to 1000. Client will call multiple times if records are more then 1000.
+          type: integer
+          format: int32
+          default: 1000
+          minimum: 1
+          maximum: 1000
+          example: 1000

@@ -1,0 +1,4 @@
+databaseChangeLog:
+- include:
+    file: release-23.1/scripts/changelog-23.1.yaml
+    relativeToChangelogFile: true

@@ -1,0 +1,63 @@
+databaseChangeLog:
+- changeSet:
+    id: schema-23.1-schema
+    author: kjp
+    changes:
+    - createTable:
+        tableName: Transaction
+        columns:
+        - column:
+            name: Id
+            type: INT
+            constraints:
+                nullable: false
+            autoIncrement: true    
+        - column:
+            name: book_id
+            type: VARCHAR(250)
+            constraints:
+                nullable: false        
+        - column:
+            name: patron_id
+            type: VARCHAR(50)
+            constraints:
+                nullable: false
+        - column:
+            name: duedate
+            type: VARCHAR(250)
+            constraints:
+                nullable: false       
+        - column:
+            name: status
+            type: VARCHAR(250)
+            constraints:
+                nullable: true       
+        - column:
+            name: comments
+            type: VARCHAR(250)
+            constraints:
+                nullable: false
+        - column:
+            name: action_date
+            type: VARCHAR(250)
+            constraints:
+                nullable: false
+        - column:
+            name: issue_date
+            type: VARCHAR(250)
+            constraints:
+                nullable: false
+        - column:
+            name: return_date
+            type: VARCHAR(250)
+            constraints:
+                nullable: true
+        - column:
+            name: fine_amount
+            type: VARCHAR(10)
+            constraints:
+                nullable: true                                     
+    - addPrimaryKey:
+        tableName: Transaction
+        columnNames: Id
+        constraintName: PK_Transaction    

@@ -1,0 +1,43 @@
+databaseChangeLog:
+- changeSet:
+    id: schema-23.1-schema
+    author: kjp
+    changes:
+    - createTable:
+        tableName: Patron
+        columns:
+        - column:
+            name: Id
+            type: INT
+            constraints:
+                nullable: false
+            autoIncrement: true    
+        - column:
+            name: name
+            type: VARCHAR(250)
+            constraints:
+                nullable: false        
+        - column:
+            name: Cell_Number
+            type: VARCHAR(50)
+            constraints:
+                nullable: false
+        - column:
+            name: Address_Line1
+            type: VARCHAR(250)
+            constraints:
+                nullable: false       
+        - column:
+            name: City
+            type: VARCHAR(250)
+            constraints:
+                nullable: true       
+        - column:
+            name: Country
+            type: VARCHAR(250)
+            constraints:
+                nullable: false       
+    - addPrimaryKey:
+        tableName: Patron
+        columnNames: Id
+        constraintName: PK_Patron    
