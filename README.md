@@ -11,6 +11,7 @@ Library Management System
 ------------------------------------------------------------------------------------------------------------
 - This is initial version of application which can be enhanced further to introduce more features
 - Liquibase is used for database/schema/table creation and data insertion
+- H2 database is used
 - Swagger is used for api sepcs and DTO generation
 - Word document LMS Demostration is attached to show working examples with API request/response as well
 - Currently the app is designed and developed using modular monolith approach so that if required in future it can easily be transitioned to microservices approach
