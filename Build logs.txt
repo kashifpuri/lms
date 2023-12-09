@@ -1,0 +1,953 @@
+Microsoft Windows [Version 10.0.19045.3570]
+(c) Microsoft Corporation. All rights reserved.
+
+D:\>cd Repository
+
+D:\Repository>cd lms
+
+D:\Repository\lms>dir
+ Volume in drive D has no label.
+ Volume Serial Number is 68C6-CB69
+
+ Directory of D:\Repository\lms
+
+12/09/2023  10:03 AM    <DIR>          .
+12/09/2023  10:03 AM    <DIR>          ..
+12/08/2023  10:34 AM             2,101 .classpath
+12/08/2023  10:34 AM               200 .factorypath
+12/04/2023  10:12 AM               395 .gitignore
+12/09/2023  09:54 AM    <DIR>          .idea
+12/08/2023  03:26 PM    <DIR>          .mvn
+12/05/2023  09:53 AM               708 .project
+12/08/2023  03:26 PM    <DIR>          .settings
+12/04/2023  10:12 AM               429 HELP.md
+12/04/2023  10:12 AM            11,290 mvnw
+12/04/2023  10:12 AM             7,592 mvnw.cmd
+12/09/2023  09:47 AM            10,092 pom.xml
+12/08/2023  03:26 PM    <DIR>          src
+12/09/2023  10:04 AM    <DIR>          target
+               8 File(s)         32,807 bytes
+               7 Dir(s)  252,426,354,688 bytes free
+
+D:\Repository\lms>mvnw clean install
+[INFO] Scanning for projects...
+[WARNING]
+[WARNING] Some problems were encountered while building the effective model for com.app:lms:jar:0.0.1-SNAPSHOT
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.openapitools:openapi-generator-maven-plugin @ line 130, column 21
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.openapitools:openapi-generator-maven-plugin @ line 158, column 21
+[WARNING] 'build.plugins.plugin.version' for org.jacoco:jacoco-maven-plugin is missing. @ line 213, column 12
+[WARNING]
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING]
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING]
+[INFO]
+[INFO] ----------------------------< com.app:lms >-----------------------------
+[INFO] Building lms 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- clean:3.2.0:clean (default-clean) @ lms ---
+[INFO] Deleting D:\Repository\lms\target
+[INFO]
+[INFO] --- jacoco:0.8.11:prepare-agent (default) @ lms ---
+[INFO] argLine set to -javaagent:C:\\Users\\kashif.javed\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.11\\org.jacoco.agent-0.8.11-runtime.jar=destfile=D:\\Repository\\lms\\target\\jacoco.exec
+[INFO]
+[INFO] --- openapi-generator:3.0.2:generate (lms-book.yaml) @ lms ---
+[WARNING] The 'language' option is deprecated and may reference language names only in the next major release (4.0). Please use 'generatorName' instead.
+[WARNING] Output directory does not exist, or is inaccessible. No file (.openapi-generator-ignore) will be evaluated.
+----------------------------------
+[INFO] Invoker Package Name, originally not set, is now dervied from model package name: com.app.lms.book.data
+[WARNING] 'host' not defined in the spec (2.0). Default to http://localhost
+[WARNING] 'host' not defined in the spec (2.0). Default to http://localhost
+[WARNING] 'host' not defined in the spec (2.0). Default to http://localhost
+[WARNING] Unknown type found in the schema: object
+[WARNING] Unknown type found in the schema: object
+[INFO] writing file D:\Repository\lms\target\generated-sources\swagger\src\main\java\com\app\lms\book\data\dto\AddBookResponse.java
+[INFO] writing file D:\Repository\lms\target\generated-sources\swagger\src\main\java\com\app\lms\book\data\dto\Book.java
+[INFO] writing file D:\Repository\lms\target\generated-sources\swagger\src\main\java\com\app\lms\book\data\dto\BooksListResponse.java
+[INFO] writing file D:\Repository\lms\target\generated-sources\swagger\src\main\java\com\app\lms\book\data\dto\Error.java
+[INFO] writing file D:\Repository\lms\target\generated-sources\swagger\src\main\java\com\app\lms\book\data\dto\Page.java
+[INFO] writing file D:\Repository\lms\target\generated-sources\swagger\src\main\java\com\app\lms\book\data\dto\Pagination.java
+[WARNING] 'host' not defined in the spec (2.0). Default to http://localhost
+[INFO]
+[INFO] --- openapi-generator:3.0.2:generate (lms-patron.yaml) @ lms ---
+[WARNING] The 'language' option is deprecated and may reference language names only in the next major release (4.0). Please use 'generatorName' instead.
+[INFO] No .openapi-generator-ignore file found.
+----------------------------------
+[INFO] Invoker Package Name, originally not set, is now dervied from model package name: com.app.lms.patron.data
+[WARNING] 'host' not defined in the spec (2.0). Default to http://localhost
+[WARNING] 'host' not defined in the spec (2.0). Default to http://localhost
+[WARNING] 'host' not defined in the spec (2.0). Default to http://localhost
+[WARNING] Unknown type found in the schema: object
+[WARNING] Unknown type found in the schema: object
+[INFO] writing file D:\Repository\lms\target\generated-sources\swagger\src\main\java\com\app\lms\patron\data\dto\AddPatronResponse.java
+[INFO] writing file D:\Repository\lms\target\generated-sources\swagger\src\main\java\com\app\lms\patron\data\dto\Error.java
+[INFO] writing file D:\Repository\lms\target\generated-sources\swagger\src\main\java\com\app\lms\patron\data\dto\Page.java
+[INFO] writing file D:\Repository\lms\target\generated-sources\swagger\src\main\java\com\app\lms\patron\data\dto\Pagination.java
+[INFO] writing file D:\Repository\lms\target\generated-sources\swagger\src\main\java\com\app\lms\patron\data\dto\Patron.java
+[INFO] writing file D:\Repository\lms\target\generated-sources\swagger\src\main\java\com\app\lms\patron\data\dto\PatronsListResponse.java
+[WARNING] 'host' not defined in the spec (2.0). Default to http://localhost
+[INFO]
+[INFO] --- openapi-generator:3.0.2:generate (lms-transaction.yaml) @ lms ---
+[WARNING] The 'language' option is deprecated and may reference language names only in the next major release (4.0). Please use 'generatorName' instead.
+[INFO] No .openapi-generator-ignore file found.
+----------------------------------
+[INFO] Invoker Package Name, originally not set, is now dervied from model package name: com.app.lms.transaction.data
+[WARNING] 'host' not defined in the spec (2.0). Default to http://localhost
+[WARNING] 'host' not defined in the spec (2.0). Default to http://localhost
+[WARNING] 'host' not defined in the spec (2.0). Default to http://localhost
+[WARNING] Unknown type found in the schema: object
+[WARNING] Unknown type found in the schema: object
+[INFO] writing file D:\Repository\lms\target\generated-sources\swagger\src\main\java\com\app\lms\transaction\data\dto\AddTransactionResponse.java
+[INFO] writing file D:\Repository\lms\target\generated-sources\swagger\src\main\java\com\app\lms\transaction\data\dto\Error.java
+[INFO] writing file D:\Repository\lms\target\generated-sources\swagger\src\main\java\com\app\lms\transaction\data\dto\Page.java
+[INFO] writing file D:\Repository\lms\target\generated-sources\swagger\src\main\java\com\app\lms\transaction\data\dto\Pagination.java
+[INFO] writing file D:\Repository\lms\target\generated-sources\swagger\src\main\java\com\app\lms\transaction\data\dto\Transaction.java
+[INFO] writing file D:\Repository\lms\target\generated-sources\swagger\src\main\java\com\app\lms\transaction\data\dto\TransactionsListResponse.java
+[WARNING] 'host' not defined in the spec (2.0). Default to http://localhost
+[INFO]
+[INFO] --- resources:3.2.0:resources (default-resources) @ lms ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 11 resources
+[INFO]
+[INFO] --- compiler:3.8.0:compile (default-compile) @ lms ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 47 source files to D:\Repository\lms\target\classes
+[INFO] /D:/Repository/lms/src/main/java/com/app/lms/security/WebSecurityConfiguration.java: D:\Repository\lms\src\main\java\com\app\lms\security\WebSecurityConfiguration.java uses or overrides a deprecated API.
+[INFO] /D:/Repository/lms/src/main/java/com/app/lms/security/WebSecurityConfiguration.java: Recompile with -Xlint:deprecation for details.
+[INFO] /D:/Repository/lms/src/main/java/com/app/lms/security/JwtUtil.java: D:\Repository\lms\src\main\java\com\app\lms\security\JwtUtil.java uses unchecked or unsafe operations.
+[INFO] /D:/Repository/lms/src/main/java/com/app/lms/security/JwtUtil.java: Recompile with -Xlint:unchecked for details.
+[INFO]
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ lms ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory D:\Repository\lms\src\test\resources
+[INFO]
+[INFO] --- compiler:3.8.0:testCompile (default-testCompile) @ lms ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to D:\Repository\lms\target\test-classes
+[INFO]
+[INFO] --- surefire:2.22.2:test (default-test) @ lms ---
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.app.lms.features.books.BookControllerTest
+12:37:54.279 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+12:37:54.297 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+12:37:54.375 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.app.lms.features.books.BookControllerTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+12:37:54.396 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.app.lms.features.books.BookControllerTest], using SpringBootContextLoader
+12:37:54.406 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.app.lms.features.books.BookControllerTest]: class path resource [com/app/lms/features/books/BookControllerTest-context.xml] does not exist
+12:37:54.406 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.app.lms.features.books.BookControllerTest]: class path resource [com/app/lms/features/books/BookControllerTestContext.groovy] does not exist
+12:37:54.407 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.app.lms.features.books.BookControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+12:37:54.408 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.app.lms.features.books.BookControllerTest]: BookControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:37:54.502 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.app.lms.features.books.BookControllerTest]
+12:37:54.635 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [D:\Repository\lms\target\classes\com\app\lms\LmsApplication.class]
+12:37:54.637 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.app.lms.LmsApplication for test class com.app.lms.features.books.BookControllerTest
+12:37:54.801 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.app.lms.features.books.BookControllerTest]: using defaults.
+12:37:54.802 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+12:37:54.837 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3e1a3801, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6fd12c5, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@1de0a46c, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4d1f1ff5, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@222afc67, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4c2fb9dd, org.springframework.test.context.transaction.TransactionalTestExecutionListener@54f4a7f0, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@61a1ea2c, org.springframework.test.context.event.EventPublishingTestExecutionListener@149debbb, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@25cd49a4, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@5477a1ca, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3ae9d1e2, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@41522537, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@e9dc4d0, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@670d4d38, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@131ff6fa, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@43b40233]
+12:37:54.846 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@27b45ea testClass = BookControllerTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@3e17a0a1 testClass = BookControllerTest, locations = '{}', classes = '{class com.app.lms.LmsApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@790a251b key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3fabf088, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@5cbf9e9f, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7dd712e8, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@1968a49c, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@df5f5c0, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@55b53d44], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.16)
+
+2023-12-09 12:37:55.356  INFO 134876 --- [           main] c.a.l.features.books.BookControllerTest  : Starting BookControllerTest using Java 17.0.9 on KASHIF-JAVED with PID 134876 (started by kashif.javed in D:\Repository\lms)
+2023-12-09 12:37:55.358 DEBUG 134876 --- [           main] c.a.l.features.books.BookControllerTest  : Running with Spring Boot v2.7.16, Spring v5.3.30
+2023-12-09 12:37:55.359  INFO 134876 --- [           main] c.a.l.features.books.BookControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2023-12-09 12:37:55.391 DEBUG 134876 --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@72bd2871
+2023-12-09 12:37:56.120  INFO 134876 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-09 12:37:56.220  INFO 134876 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 3 JPA repository interfaces.
+2023-12-09 12:37:57.517  INFO 134876 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-09 12:37:57.995  INFO 134876 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-09 12:37:58.128  INFO 134876 --- [           main] liquibase.database                       : Set default schema name to PUBLIC
+2023-12-09 12:37:58.472  INFO 134876 --- [           main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-12-09 12:37:58.916  INFO 134876 --- [           main] liquibase.changelog                      : Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2023-12-09 12:37:58.924  INFO 134876 --- [           main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+Running Changeset: db/changelog/release-23.1/scripts/schema-book-23.1.yaml::schema-23.1-schema::kjp
+2023-12-09 12:37:59.078  INFO 134876 --- [           main] liquibase.changelog                      : Table Book created
+2023-12-09 12:37:59.082  INFO 134876 --- [           main] liquibase.changelog                      : Primary key added to Book (Id)
+2023-12-09 12:37:59.083  INFO 134876 --- [           main] liquibase.changelog                      : ChangeSet db/changelog/release-23.1/scripts/schema-book-23.1.yaml::schema-23.1-schema::kjp ran successfully in 17ms
+Running Changeset: db/changelog/release-23.1/scripts/data-book-23.1.yaml::data-23.1-data::kjp
+2023-12-09 12:37:59.093  INFO 134876 --- [           main] liquibase.changelog                      : New row inserted into Book
+2023-12-09 12:37:59.097  INFO 134876 --- [           main] liquibase.changelog                      : New row inserted into Book
+2023-12-09 12:37:59.104  INFO 134876 --- [           main] liquibase.changelog                      : New row inserted into Book
+2023-12-09 12:37:59.105  INFO 134876 --- [           main] liquibase.changelog                      : ChangeSet db/changelog/release-23.1/scripts/data-book-23.1.yaml::data-23.1-data::kjp ran successfully in 13ms
+Running Changeset: db/changelog/release-23.1/scripts/schema-patron-23.1.yaml::schema-23.1-schema::kjp
+2023-12-09 12:37:59.113  INFO 134876 --- [           main] liquibase.changelog                      : Table Patron created
+2023-12-09 12:37:59.115  INFO 134876 --- [           main] liquibase.changelog                      : Primary key added to Patron (Id)
+2023-12-09 12:37:59.116  INFO 134876 --- [           main] liquibase.changelog                      : ChangeSet db/changelog/release-23.1/scripts/schema-patron-23.1.yaml::schema-23.1-schema::kjp ran successfully in 7ms
+Running Changeset: db/changelog/release-23.1/scripts/data-patron-23.1.yaml::data-23.1-data::kjp
+2023-12-09 12:37:59.122  INFO 134876 --- [           main] liquibase.changelog                      : New row inserted into Patron
+2023-12-09 12:37:59.124  INFO 134876 --- [           main] liquibase.changelog                      : New row inserted into Patron
+2023-12-09 12:37:59.125  INFO 134876 --- [           main] liquibase.changelog                      : New row inserted into Patron
+2023-12-09 12:37:59.126  INFO 134876 --- [           main] liquibase.changelog                      : ChangeSet db/changelog/release-23.1/scripts/data-patron-23.1.yaml::data-23.1-data::kjp ran successfully in 5ms
+Running Changeset: db/changelog/release-23.1/scripts/schema-transaction-23.1.yaml::schema-23.1-schema::kjp
+2023-12-09 12:37:59.134  INFO 134876 --- [           main] liquibase.changelog                      : Table Transaction created
+2023-12-09 12:37:59.136  INFO 134876 --- [           main] liquibase.changelog                      : Primary key added to Transaction (Id)
+2023-12-09 12:37:59.137  INFO 134876 --- [           main] liquibase.changelog                      : ChangeSet db/changelog/release-23.1/scripts/schema-transaction-23.1.yaml::schema-23.1-schema::kjp ran successfully in 7ms
+Running Changeset: db/changelog/release-23.1/scripts/changelog-23.1.yaml::23.1-scripts::kjp
+2023-12-09 12:37:59.140  INFO 134876 --- [           main] liquibase.changelog                      : Tag '23.1-scripts' applied to database
+2023-12-09 12:37:59.140  INFO 134876 --- [           main] liquibase.changelog                      : ChangeSet db/changelog/release-23.1/scripts/changelog-23.1.yaml::23.1-scripts::kjp ran successfully in 1ms
+2023-12-09 12:37:59.144  INFO 134876 --- [           main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-09 12:37:59.263  INFO 134876 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-09 12:37:59.338  INFO 134876 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-12-09 12:37:59.565  INFO 134876 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-09 12:37:59.715  INFO 134876 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-12-09 12:38:00.480  INFO 134876 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-09 12:38:00.492  INFO 134876 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-09 12:38:01.426  INFO 134876 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@21a5a8f2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@57e14b, org.springframework.security.web.context.SecurityContextPersistenceFilter@14aa3650, org.springframework.security.web.header.HeaderWriterFilter@7dbddd9b, org.springframework.security.web.authentication.logout.LogoutFilter@2e59b658, com.app.lms.security.JwtAuthorizationFilter@1be853c5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5636f71b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@13eb533b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6a7f0da2, org.springframework.security.web.session.SessionManagementFilter@7ad221e6, org.springframework.security.web.access.ExceptionTranslationFilter@6281472, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@c20848b]
+2023-12-09 12:38:01.716  WARN 134876 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-09 12:38:01.935 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-12-09 12:38:02.008  INFO 134876 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test2db'
+2023-12-09 12:38:02.113 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 18 mappings in 'requestMappingHandlerMapping'
+2023-12-09 12:38:02.165 DEBUG 134876 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2023-12-09 12:38:02.187 DEBUG 134876 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-12-09 12:38:02.450  INFO 134876 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-12-09 12:38:02.450  INFO 134876 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-12-09 12:38:02.452  INFO 134876 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2023-12-09 12:38:02.479  INFO 134876 --- [           main] c.a.l.features.books.BookControllerTest  : Started BookControllerTest in 7.549 seconds (JVM running for 9.261)
+2023-12-09 12:38:02.750 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.app.lms.features.books.BookController#getBooksList()
+2023-12-09 12:38:03.054 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2023-12-09 12:38:03.109 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [class BooksListResponse {<EOL>    books: [class Book {<EOL>        bookId: 1<EOL>        title: Sapiens - A Brie (truncated)...]
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/books
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.app.lms.features.books.BookController
+           Method = com.app.lms.features.books.BookController#getBooksList()
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = {"books":[{"bookId":1,"title":"Sapiens - A Brief History of Humankind","genre":"Non-Fiction","rating":"4","author":"Yuval Noah Harari","isbn":"ISBN-10 0-596-52068-9","totalQuantity":100,"availableQuantity":100},{"bookId":2,"title":"How the World Really Works","genre":"Non-Fiction","rating":"4","author":"Vaclav Smil","isbn":"0-596-52068-9","totalQuantity":10,"availableQuantity":10},{"bookId":3,"title":"Surrender","genre":"Non-Fiction","rating":"4","author":"Bono","isbn":"0-586-52068-9","totalQuantity":10,"availableQuantity":10}],"pagination":null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2023-12-09 12:38:03.237 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.app.lms.features.books.BookController#addBook(Book)
+2023-12-09 12:38:03.298 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [class Book {<EOL>    bookId: 4<EOL>    title: My Title<EOL>    genre: Fiction<EOL>    rating: 8<EOL>    author: Author<EOL>  (truncated)...]
+2023-12-09 12:38:03.419 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2023-12-09 12:38:03.421 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [class AddBookResponse {<EOL>    book: class Book {<EOL>        bookId: 4<EOL>        title: My Title<EOL>        gen (truncated)...]
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/v1/book
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"154"]
+             Body = {"bookId":4,"title":"My Title","genre":"Fiction","rating":"8","author":"Author","isbn":"ISBN-10: 0-596-52068-9","totalQuantity":10,"availableQuantity":10}
+    Session Attrs = {}
+
+Handler:
+             Type = com.app.lms.features.books.BookController
+           Method = com.app.lms.features.books.BookController#addBook(Book)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = {"book":{"bookId":4,"title":"My Title","genre":"Fiction","rating":"8","author":"Author","isbn":"ISBN-10: 0-596-52068-9","totalQuantity":10,"availableQuantity":10}}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2023-12-09 12:38:03.437 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.app.lms.features.books.BookController#updateBook(Book)
+2023-12-09 12:38:03.439 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [class Book {<EOL>    bookId: 2<EOL>    title: Sapiens - A Brief History of Humankind<EOL>    genre: Non-Fiction<EOL> (truncated)...]
+2023-12-09 12:38:03.466 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2023-12-09 12:38:03.467 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+
+MockHttpServletRequest:
+      HTTP Method = PUT
+      Request URI = /api/v1/book/2
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"190"]
+             Body = {"bookId":2,"title":"Sapiens - A Brief History of Humankind","genre":"Non-Fiction","rating":"8","author":"Yuval Noah Harari","isbn":"0-596-52068-9","totalQuantity":50,"availableQuantity":50}
+    Session Attrs = {}
+
+Handler:
+             Type = com.app.lms.features.books.BookController
+           Method = com.app.lms.features.books.BookController#updateBook(Book)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body =
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2023-12-09 12:38:03.472 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.app.lms.features.books.BookController#getBookDetail(Integer)
+2023-12-09 12:38:03.490 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2023-12-09 12:38:03.490 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [class Book {<EOL>    bookId: 2<EOL>    title: Sapiens - A Brief History of Humankind<EOL>    genre: Non-Fiction<EOL> (truncated)...]
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/book/2
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.app.lms.features.books.BookController
+           Method = com.app.lms.features.books.BookController#getBookDetail(Integer)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = {"bookId":2,"title":"Sapiens - A Brief History of Humankind","genre":"Non-Fiction","rating":"8","author":"Yuval Noah Harari","isbn":"0-596-52068-9","totalQuantity":50,"availableQuantity":50}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2023-12-09 12:38:03.510 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.app.lms.features.books.BookController#getBookDetail(Integer)
+2023-12-09 12:38:03.517 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2023-12-09 12:38:03.518 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [class Book {<EOL>    bookId: 1<EOL>    title: Sapiens - A Brief History of Humankind<EOL>    genre: Non-Fiction<EOL> (truncated)...]
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/book/1
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.app.lms.features.books.BookController
+           Method = com.app.lms.features.books.BookController#getBookDetail(Integer)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = {"bookId":1,"title":"Sapiens - A Brief History of Humankind","genre":"Non-Fiction","rating":"4","author":"Yuval Noah Harari","isbn":"ISBN-10 0-596-52068-9","totalQuantity":100,"availableQuantity":100}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2023-12-09 12:38:03.536 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.app.lms.features.books.BookController#updateBook(Book)
+2023-12-09 12:38:03.538 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [class Book {<EOL>    bookId: 10<EOL>    title: Sapiens - A Brief History of Humankind<EOL>    genre: Non-Fiction (truncated)...]
+2023-12-09 12:38:03.547 DEBUG 134876 --- [           main] .w.s.m.a.ResponseStatusExceptionResolver : Resolved [org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND "Book Not Found"]
+
+MockHttpServletRequest:
+      HTTP Method = PUT
+      Request URI = /api/v1/book/10
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"191"]
+             Body = {"bookId":10,"title":"Sapiens - A Brief History of Humankind","genre":"Non-Fiction","rating":"8","author":"Yuval Noah Harari","isbn":"0-596-52068-9","totalQuantity":50,"availableQuantity":50}
+    Session Attrs = {}
+
+Handler:
+             Type = com.app.lms.features.books.BookController
+           Method = com.app.lms.features.books.BookController#updateBook(Book)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = org.springframework.web.server.ResponseStatusException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 404
+    Error message = Book Not Found
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body =
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2023-12-09 12:38:03.559 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.app.lms.features.books.BookController#getBookDetail(Integer)
+2023-12-09 12:38:03.570 DEBUG 134876 --- [           main] .w.s.m.a.ResponseStatusExceptionResolver : Resolved [org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND "Book Not Found"]
+2023-12-09 12:38:03.579 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.app.lms.features.books.BookController#deleteBook(Integer)
+2023-12-09 12:38:03.594 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2023-12-09 12:38:03.594 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+
+MockHttpServletRequest:
+      HTTP Method = DELETE
+      Request URI = /api/v1/book/3
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.app.lms.features.books.BookController
+           Method = com.app.lms.features.books.BookController#deleteBook(Integer)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body =
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2023-12-09 12:38:03.598 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.app.lms.features.books.BookController#getBookDetail(Integer)
+2023-12-09 12:38:03.602 DEBUG 134876 --- [           main] .w.s.m.a.ResponseStatusExceptionResolver : Resolved [org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND "Book Not Found"]
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/books
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Access Denied
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body =
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.44 s - in com.app.lms.features.books.BookControllerTest
+[INFO] Running com.app.lms.features.books.BookServiceTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.175 s - in com.app.lms.features.books.BookServiceTest
+[INFO] Running com.app.lms.features.patrons.PatronControllerTest
+2023-12-09 12:38:03.840  INFO 134876 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.app.lms.features.patrons.PatronControllerTest], using SpringBootContextLoader
+2023-12-09 12:38:03.841  INFO 134876 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.app.lms.features.patrons.PatronControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2023-12-09 12:38:03.841  INFO 134876 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.app.lms.features.patrons.PatronControllerTest]: PatronControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-12-09 12:38:03.851  INFO 134876 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.app.lms.LmsApplication for test class com.app.lms.features.patrons.PatronControllerTest
+2023-12-09 12:38:03.854  INFO 134876 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+2023-12-09 12:38:03.854  INFO 134876 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1f063314, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@43bc56a0, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@11f7f6f7, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@39aee73d, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@171efd8f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3636b09a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1858a8e5, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@560123dc, org.springframework.test.context.event.EventPublishingTestExecutionListener@36935e16, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@35228a3e, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@686013ff, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3720c2ec, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1bef49f0, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3abd53c9, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@522a508a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@632cdf81, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@26daadd]
+2023-12-09 12:38:03.860 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.app.lms.features.patrons.PatronController#getPatronDetail(Integer)
+2023-12-09 12:38:03.865 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2023-12-09 12:38:03.867 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [class Patron {<EOL>    patronId: 1<EOL>    name: Walter White<EOL>    cellNumber: 6858542<EOL>    addressLine1: 3828 (truncated)...]
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/patron/1
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.app.lms.features.patrons.PatronController
+           Method = com.app.lms.features.patrons.PatronController#getPatronDetail(Integer)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = {"patronId":1,"name":"Walter White","cellNumber":"6858542","addressLine1":"3828 Piermont Dr","city":"Albuquerque, NM","country":"USA"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2023-12-09 12:38:03.887 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.app.lms.features.patrons.PatronController#updatePatron(Patron)
+2023-12-09 12:38:03.890 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [class Patron {<EOL>    patronId: 2<EOL>    name: Name<EOL>    cellNumber: +123123123<EOL>    addressLine1: Address<EOL>  (truncated)...]
+2023-12-09 12:38:03.907 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2023-12-09 12:38:03.908 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+
+MockHttpServletRequest:
+      HTTP Method = PUT
+      Request URI = /api/v1/patron/2
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"111"]
+             Body = {"patronId":2,"name":"Name","cellNumber":"+123123123","addressLine1":"Address","city":"Atmore","country":"USA"}
+    Session Attrs = {}
+
+Handler:
+             Type = com.app.lms.features.patrons.PatronController
+           Method = com.app.lms.features.patrons.PatronController#updatePatron(Patron)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body =
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2023-12-09 12:38:03.915 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.app.lms.features.patrons.PatronController#getPatronDetail(Integer)
+2023-12-09 12:38:03.920 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2023-12-09 12:38:03.921 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [class Patron {<EOL>    patronId: 2<EOL>    name: Name<EOL>    cellNumber: +123123123<EOL>    addressLine1: Address<EOL>  (truncated)...]
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/patron/2
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.app.lms.features.patrons.PatronController
+           Method = com.app.lms.features.patrons.PatronController#getPatronDetail(Integer)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = {"patronId":2,"name":"Name","cellNumber":"+123123123","addressLine1":"Address","city":"Atmore","country":"USA"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2023-12-09 12:38:03.941 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.app.lms.features.patrons.PatronController#getPatronsList()
+2023-12-09 12:38:03.950 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2023-12-09 12:38:03.954 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [class PatronsListResponse {<EOL>    patrons: [class Patron {<EOL>        patronId: 1<EOL>        name: Walter Wh (truncated)...]
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/patrons
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.app.lms.features.patrons.PatronController
+           Method = com.app.lms.features.patrons.PatronController#getPatronsList()
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = {"patrons":[{"patronId":1,"name":"Walter White","cellNumber":"6858542","addressLine1":"3828 Piermont Dr","city":"Albuquerque, NM","country":"USA"},{"patronId":2,"name":"Name","cellNumber":"+123123123","addressLine1":"Address","city":"Atmore","country":"USA"},{"patronId":3,"name":"Gustavo Fring","cellNumber":"978-0062316097","addressLine1":"1213 Jefferson St NE","city":"Albuquerque, NM","country":"USA"}],"pagination":null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2023-12-09 12:38:03.969 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.app.lms.features.patrons.PatronController#updatePatron(Patron)
+2023-12-09 12:38:03.971 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [class Patron {<EOL>    patronId: 10<EOL>    name: Name<EOL>    cellNumber: +123123123<EOL>    addressLine1: Address<EOL> (truncated)...]
+2023-12-09 12:38:03.974 DEBUG 134876 --- [           main] .w.s.m.a.ResponseStatusExceptionResolver : Resolved [org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND "Patron Not Found"]
+
+MockHttpServletRequest:
+      HTTP Method = PUT
+      Request URI = /api/v1/patron/10
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"112"]
+             Body = {"patronId":10,"name":"Name","cellNumber":"+123123123","addressLine1":"Address","city":"Atmore","country":"USA"}
+    Session Attrs = {}
+
+Handler:
+             Type = com.app.lms.features.patrons.PatronController
+           Method = com.app.lms.features.patrons.PatronController#updatePatron(Patron)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = org.springframework.web.server.ResponseStatusException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 404
+    Error message = Patron Not Found
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body =
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2023-12-09 12:38:03.988 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.app.lms.features.patrons.PatronController#addPatron(Patron)
+2023-12-09 12:38:03.989 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [class Patron {<EOL>    patronId: null<EOL>    name: Name<EOL>    cellNumber: +123123123<EOL>    addressLine1: Addres (truncated)...]
+2023-12-09 12:38:03.996 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2023-12-09 12:38:03.999 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Writing [class AddPatronResponse {<EOL>    patron: class Patron {<EOL>        patronId: 4<EOL>        name: Name<EOL>         (truncated)...]
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/v1/patron
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"114"]
+             Body = {"patronId":null,"name":"Name","cellNumber":"+123123123","addressLine1":"Address","city":"Atmore","country":"USA"}
+    Session Attrs = {}
+
+Handler:
+             Type = com.app.lms.features.patrons.PatronController
+           Method = com.app.lms.features.patrons.PatronController#addPatron(Patron)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = {"patron":{"patronId":4,"name":"Name","cellNumber":"+123123123","addressLine1":"Address","city":"Atmore","country":"USA"}}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2023-12-09 12:38:04.009 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.app.lms.features.patrons.PatronController#deletePatron(Integer)
+2023-12-09 12:38:04.017 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2023-12-09 12:38:04.018 DEBUG 134876 --- [           main] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+
+MockHttpServletRequest:
+      HTTP Method = DELETE
+      Request URI = /api/v1/patron/3
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.app.lms.features.patrons.PatronController
+           Method = com.app.lms.features.patrons.PatronController#deletePatron(Integer)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body =
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2023-12-09 12:38:04.021 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.app.lms.features.patrons.PatronController#getPatronDetail(Integer)
+2023-12-09 12:38:04.025 DEBUG 134876 --- [           main] .w.s.m.a.ResponseStatusExceptionResolver : Resolved [org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND "Patron Not Found"]
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/patrons
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 403
+    Error message = Access Denied
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body =
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2023-12-09 12:38:04.039 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.app.lms.features.patrons.PatronController#getPatronDetail(Integer)
+2023-12-09 12:38:04.041 DEBUG 134876 --- [           main] .w.s.m.a.ResponseStatusExceptionResolver : Resolved [org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND "Patron Not Found"]
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.196 s - in com.app.lms.features.patrons.PatronControllerTest
+[INFO] Running com.app.lms.features.patrons.PatronServiceTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 s - in com.app.lms.features.patrons.PatronServiceTest
+[INFO] Running com.app.lms.LmsApplicationTests
+2023-12-09 12:38:04.125  INFO 134876 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.app.lms.LmsApplicationTests], using SpringBootContextLoader
+2023-12-09 12:38:04.126  INFO 134876 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.app.lms.LmsApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2023-12-09 12:38:04.126  INFO 134876 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.app.lms.LmsApplicationTests]: LmsApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-12-09 12:38:04.129  INFO 134876 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.app.lms.LmsApplication for test class com.app.lms.LmsApplicationTests
+2023-12-09 12:38:04.130  INFO 134876 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+2023-12-09 12:38:04.130  INFO 134876 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7597ca33, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@82272c4, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@2ce8935d, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@55e3f582, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1eee6b5f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5419e14, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6ddb879a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@27de2046, org.springframework.test.context.event.EventPublishingTestExecutionListener@4a870371, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@43bf950b, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@72e92db1, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@24e3ffba, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@568decdc, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@69252ccb, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@521a00fb, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@693f2b2d, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@506dd1da]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.16)
+
+2023-12-09 12:38:04.152  INFO 134876 --- [           main] com.app.lms.LmsApplicationTests          : Starting LmsApplicationTests using Java 17.0.9 on KASHIF-JAVED with PID 134876 (started by kashif.javed in D:\Repository\lms)
+2023-12-09 12:38:04.152 DEBUG 134876 --- [           main] com.app.lms.LmsApplicationTests          : Running with Spring Boot v2.7.16, Spring v5.3.30
+2023-12-09 12:38:04.152  INFO 134876 --- [           main] com.app.lms.LmsApplicationTests          : No active profile set, falling back to 1 default profile: "default"
+2023-12-09 12:38:04.154 DEBUG 134876 --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7d1e0b78
+2023-12-09 12:38:04.283  INFO 134876 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-09 12:38:04.306  INFO 134876 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 3 JPA repository interfaces.
+2023-12-09 12:38:04.441  INFO 134876 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-12-09 12:38:04.443  INFO 134876 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-12-09 12:38:04.446  INFO 134876 --- [           main] liquibase.database                       : Set default schema name to PUBLIC
+2023-12-09 12:38:04.456  INFO 134876 --- [           main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-12-09 12:38:04.524  INFO 134876 --- [           main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2023-12-09 12:38:04.545  INFO 134876 --- [           main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-09 12:38:04.597  INFO 134876 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-09 12:38:04.603  INFO 134876 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-12-09 12:38:04.666  INFO 134876 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-09 12:38:04.666  INFO 134876 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-09 12:38:04.933  INFO 134876 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@10814a9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ddfd4d0, org.springframework.security.web.context.SecurityContextPersistenceFilter@5c2ea14d, org.springframework.security.web.header.HeaderWriterFilter@3892148b, org.springframework.security.web.authentication.logout.LogoutFilter@24ae5fce, com.app.lms.security.JwtAuthorizationFilter@560e0817, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6783e2f9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4f9d84ce, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@602c9274, org.springframework.security.web.session.SessionManagementFilter@202c5a11, org.springframework.security.web.access.ExceptionTranslationFilter@1225266f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@58acd3f1]
+2023-12-09 12:38:05.029  WARN 134876 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-09 12:38:05.101 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-12-09 12:38:05.110  INFO 134876 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test2db'
+2023-12-09 12:38:05.148 DEBUG 134876 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 18 mappings in 'requestMappingHandlerMapping'
+2023-12-09 12:38:05.194 DEBUG 134876 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2023-12-09 12:38:05.204 DEBUG 134876 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-12-09 12:38:05.316  INFO 134876 --- [           main] com.app.lms.LmsApplicationTests          : Started LmsApplicationTests in 1.183 seconds (JVM running for 12.097)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.168 s - in com.app.lms.LmsApplicationTests
+[INFO] Running com.app.lms.security.JwtAuthorizationFilterTest
+2023-12-09 12:38:05.387 DEBUG 134876 --- [           main] c.a.lms.security.JwtAuthorizationFilter  : email:kashif@puri.com logged in
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s - in com.app.lms.security.JwtAuthorizationFilterTest
+2023-12-09 12:38:05.908 DEBUG 134876 --- [ionShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@72bd2871, started on Sat Dec 09 12:37:55 PKT 2023
+2023-12-09 12:38:05.911  INFO 134876 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-09 12:38:05.914  INFO 134876 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-09 12:38:05.916  INFO 134876 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-09 12:38:05.917 DEBUG 134876 --- [ionShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@7d1e0b78, started on Sat Dec 09 12:38:04 PKT 2023
+2023-12-09 12:38:05.919  INFO 134876 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-09 12:38:05.920  INFO 134876 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-12-09 12:38:05.922  INFO 134876 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 33, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO]
+[INFO] --- jacoco:0.8.11:report (report) @ lms ---
+[INFO] Loading execution data file D:\Repository\lms\target\jacoco.exec
+[INFO] Analyzed bundle 'lms' with 48 classes
+[INFO]
+[INFO] --- jar:3.2.2:jar (default-jar) @ lms ---
+[INFO] Building jar: D:\Repository\lms\target\lms-0.0.1-SNAPSHOT.jar
+[INFO]
+[INFO] --- spring-boot:2.7.16:repackage (repackage) @ lms ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO]
+[INFO] --- install:2.5.2:install (default-install) @ lms ---
+[INFO] Installing D:\Repository\lms\target\lms-0.0.1-SNAPSHOT.jar to C:\Users\kashif.javed\.m2\repository\com\app\lms\0.0.1-SNAPSHOT\lms-0.0.1-SNAPSHOT.jar
+[INFO] Installing D:\Repository\lms\pom.xml to C:\Users\kashif.javed\.m2\repository\com\app\lms\0.0.1-SNAPSHOT\lms-0.0.1-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  21.954 s
+[INFO] Finished at: 2023-12-09T12:38:08+05:00
+[INFO] ------------------------------------------------------------------------
+
+D:\Repository\lms>
