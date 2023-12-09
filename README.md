@@ -18,3 +18,4 @@ Library Management System
 - Preferably this application should be deployed on cloud using dockerization and docker orchestaration like Kubernetes so that scaling would be easier
 - We can set the initial memory and cpu limits and based on load it can auto scale 
 - Monitoring services can also be used to monitor overall application status and resource usage
+- Unit tests for book and parton are written. Coverage screenshot is also added in demonstration document
